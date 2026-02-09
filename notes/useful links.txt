@@ -1,0 +1,5 @@
+JS execution lifecycle:
+----------------------------------
+https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-javascript-execution-context/
+
+https://medium.com/@bloodturtle/understanding-javascript-execution-context-a-complete-guide-ca80b4c2fb12

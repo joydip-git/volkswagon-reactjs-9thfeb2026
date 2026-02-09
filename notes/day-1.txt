@@ -1,0 +1,104 @@
+JavaScript
+TypeScript
+
+Node JS
+
+HTML and CSS
+
+S/W:
+	Node JS
+	Visual Studio Code
+
+React JS
+	basics
+	components
+	props and state
+
+
+master directory:
+	react-js-training
+
+web server
+
+dev mode: lite server, live server, webpack dev server etc.
+prod mode:
+
+
+
+DOM: HTML Document Object Model
+
+Browser: Chrome (C++)
+APIs: DOM APIs (window, console, document etc.)
+
+
+Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at index.js:7:5
+
+Node JS: a JS runtime with a JS engine (V8) as the backbone for it
+
+1994 - 2008
+
+
+Java => javac => byte code (IL)
+byte code => JVM (JIT) => native code
+
+JS => JS Engine (part of browser)
+
+browser engines:
+--------------------
+Chrome => JS engine => V8 (C++)
+firefox => JS engine => Spidermonkey
+safari => JS engine => JS Core (Indigo)
+edge, opera => JS engine => v8
+
+
+Ryan Dahl (2009) => open source V8 engine => modified => Node JS [alternate to the browser runtime]
+
+JavaScript:
+-------------------
+JS is a loosely typed language. use "var" keyword to declare local variable.
+does not have any static type checking
+
+data types:
+	string, number, Boolean, object, function
+
+keywords:
+	undefined, null, NaN, Infinity
+
+var x = 100
+
+functions:
+----------------
+1. when any function is invoked in JS, an instance is created for it: Function Execution Context (FEC) which has 3 properties:
+	a. variable object: refers to another object where all local variables of the function are stored along with their data
+	b. this: refers to another instance where any data declared in the function with 'this' keyword
+	c. scope: refers to another object (an array) to store copy of all the outer function scope variable and their values
+
+2. the FEC of a function is placed inside a FEC stack
+3. when the function is over, then the FEC, the variable object are destroyed, but the 'this' object is NOT destroyed
+
+Object data type in JS:
+any object is a collection of keys/properties and values
+
+in JS the OOP concepts are implemented differently through "prototype-based programming"
+
+1. object-literal syntax
+2. constructor function 
+
+
+JS programming standards/rules etc. are guided by ECMA
+ECMA releases a proposal of new features every year (June) -> ES (ECMA Script)
+
+ES 1.0, 2.0, 3.0, ..
+2015 => ES 6.0
+
+class, constructor, super, extends etc. keywords
+let, const etc.
+spread operator, object destructuring, rest operator etc.
+arrow function
+
+
+
+
+
+	
