@@ -1,0 +1,49 @@
+day-1 discussion:
+-----------------------
+Introduction to web app using HTML and JS
+dev mode web server : Live Server as VS Code extension
+JS to make the web page dynamic
+DOM (Document Object Model) and DOM APIs (window, console, document etc.)
+accessing DOM elements from JS
+JS Engine: v8 (chrome), spidermonkey (firefox), JS Core (safari) etc.
+runtime environment for JS: Browser and Node JS
+Node JS introduction
+installing Node JS
+executing JS code in Node JS
+Introduction to JS:
+	data types: string, boolean, number, object
+	typeof opeator
+	keywords: undefined, null, NaN, Infinity etc.
+functions in JS
+	function execution context (FEC) and FEC stack
+	varobj, this and scope properties of FEC object
+Objects in JS
+	creation of objects in JS using object literal syntax
+	creation of objects in JS using constructor function
+	creation of objects in JS using ES6 class
+	
+strict mode
+ECMA, ECMAScript
+JS is object-based language which follows "prototype-based programming" model
+JS is loosely typed and dynamic language
+
+
+day-2 discussion:
+------------------
+closure
+
+ES6+ features:
+-----------------------
+class, constructor, super, extends keywords
+let and const keyword
+spread and rest operator
+object destructuring
+arrow function
+
+callback in JS
+JavaScript array and its methods
+asynchronity in JS: Promise, async and await keywords
+
+JS modules
+module formats
+module loaders
