@@ -1,0 +1,6 @@
+closure
+arrow function
+
+callback in JS
+JavaScript array and its methods
+asynchronity in JS: Promise, async and await keywords

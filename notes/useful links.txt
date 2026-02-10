@@ -20,3 +20,8 @@ https://javascript.info/
 babel documentation:
 ------------------------
 https://babeljs.io/docs
+
+
+module formats in JS:
+----------------------------
+https://dev.to/fkkarakurt/javascript-module-formats-and-tools-3mg9

@@ -52,3 +52,17 @@ const employees = [
     ],
   },
 ];
+
+//name of the 2nd project as well as the name of the 2nd employee
+const [
+  ,
+  {
+    name: secondName,
+    projects: [, { name: secondProjName }],
+  },
+] = employees;
+
+// const seName = employees[1].name;
+// const seProj = employees[1].projects[1].name;
+
+console.log(secondName, secondProjName);

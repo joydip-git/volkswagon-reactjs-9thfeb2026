@@ -1,0 +1,66 @@
+create a modular JS app where we will be able to calculate total salary of an employee
+
+there are two types of employees:
+
+developer:
+	data members: id, name, basic, da, hra, incentive
+	functional member: calculateSalary (accepts no arguments and returns the calculated salary)
+
+hr:
+	data members: id, name, basic, da, hra, gratuity
+	functional member: calculateSalary (accepts no arguments and returns the calculated salary)
+
+create classes to represent the entities (different types of employees)
+
+the application must maintain an array where new employee objects can be added, updated, removed and fetched.
+these functionalities should be present in a separate class, say, employeemanager
+
+you have to call those functionalities from the root file (main file)
+
+
+create an app structure as the following:
+	create "src" directory 
+		create a folder "data/repository" to declare an array of employee objects and expory the same
+		create a folder "models" in the "src" folder and add files for all the classes to represent the entities and export all of them from individual file
+		create  folder "services" and add file for manager class here and export the same
+		add a file "index" in the "src" folder
+
+
+payroll-app
+	src
+		models
+			developer.js			
+			hr.js
+			<base-class>.js
+		services
+			manager.js
+		data/repository:
+			employees.js [an array of employees]
+		index.js
+
+
+compilation and running:
+--------------------------------
+use "babel" transpiler to get the whole code transpiled into a "dist" folder
+use ES6 module format for import/export, but get that module format transpiled into "common js" to run in  node js
+create scripts in the package.json and run those scripts to transpile and then run the whole application
+
+
+Note: steps to follow
+-----------------------
+1. create the app directory
+2. create the package.json file first
+	command to create package.json file at the root of the app directory:
+	>npm init --y 			
+3. install the dependencies next
+	babel => 
+	>npm i @babel/core @babel/cli @babel/preset-env @babel/plugin-transform-modules-commonjs -D
+
+4. create scripts in package.json to transpile the code and run the transpiled root file from the output directory:
+	{
+		"scripts": {
+			"transpile":"babel source-folder-name --out-dir=output-folder-name",
+			"app":"node ./output-folder-name/index.js"
+		}
+	}
+

@@ -1,0 +1,11 @@
+{
+    "presets": [
+        "@babel/preset-env"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-modules-commonjs"
+    ]
+}
+/*
+@babel/plugin-transform-modules-commonjs => converts the ES6 module format to common js module format while the code gets transpiled
+*/

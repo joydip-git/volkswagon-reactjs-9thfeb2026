@@ -30,7 +30,6 @@ JS is loosely typed and dynamic language
 
 day-2 discussion:
 ------------------
-closure
 
 ES6+ features:
 -----------------------
@@ -38,18 +37,10 @@ class, constructor, super, extends keywords
 let and const keyword
 spread and rest operator
 object destructuring
-arrow function
-
-callback in JS
-JavaScript array and its methods
-asynchronity in JS: Promise, async and await keywords
 
 JS modules
 module formats
 module loaders
-
-
-
 
 JS code execution:
 ---------------------
@@ -81,5 +72,113 @@ plugins/presets: @babel/preset-env
 if in that script any other script/executable name is mentioned, npm will automatically search for it in ".\node_modules\.bin" path. Hence while writing the script no need to provide full path of the executable
 for example:  "transpile": "babel src --out-dir=dist"
 
+Modules in JS:
+--------------------
+an API to expose members of a JS file
+
+module formats:
+-----------------------
+the format through which we export members of a JS file and also the way we import those exported members in another file
+
+1. Common JS: (the default module format of Node JS)
+	a. export: module.exports={prop1:member1, prop2:member2}
+	b. import: const {prop1, prop2,..} = require('module-path-w/o-extension')
+
+2. Universal Module Definition (UMD) format:
+	a. export: require('',[],function(){ members})
+	b. 
+
+3. Asynchronous Module Definition (AMD) format:
+	a. export:
+	b. import:
+
+4. ES6 module format:
+	a. export: export member
+	b. import: import {prop1, prop2,...} from 'module-path'
 
 
+Module object:
+------------------
+{
+  id: '.',
+  path: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app',
+  exports: {},
+  filename: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\index.js',
+  loaded: false,
+  children: [],
+  paths: [
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\node_modules',
+    'E:\\trainings\\node_modules',
+    'E:\\node_modules'
+  ],
+  [Symbol(kIsMainSymbol)]: true,
+  [Symbol(kIsCachedByESMLoader)]: false,
+  [Symbol(kURL)]: undefined,
+  [Symbol(kFormat)]: undefined,
+  [Symbol(kIsExecuting)]: true
+}
+
+
+
+
+{
+  id: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\utility.js',
+  path: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app',
+  exports: { addFn: [Function: add], subFn: [Function: subtract] },
+  filename: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\utility.js',
+  loaded: false,
+  children: [],
+  paths: [
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\node_modules',
+    'E:\\trainings\\node_modules',
+    'E:\\node_modules'
+  ],
+  [Symbol(kIsMainSymbol)]: false,
+  [Symbol(kIsCachedByESMLoader)]: false,
+  [Symbol(kURL)]: undefined,
+  [Symbol(kFormat)]: undefined,
+  [Symbol(kIsExecuting)]: true
+}
+{
+  id: '.',
+  path: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app',
+  exports: {},
+  filename: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\index.js',
+  loaded: false,
+  children: [
+    {
+      id: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\utility.js',
+      path: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app',
+      exports: [Object],
+      filename: 'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\utility.js',
+      loaded: true,
+      children: [],
+      paths: [Array],
+      [Symbol(kIsMainSymbol)]: false,
+      [Symbol(kIsCachedByESMLoader)]: false,
+      [Symbol(kURL)]: undefined,
+      [Symbol(kFormat)]: undefined,
+      [Symbol(kIsExecuting)]: false
+    }
+  ],
+  paths: [
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\modular-app\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\day-2\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\codes\\node_modules',
+    'E:\\trainings\\volkswagon-reactjs-9thfeb2026\\node_modules',
+    'E:\\trainings\\node_modules',
+    'E:\\node_modules'
+  ],
+  [Symbol(kIsMainSymbol)]: true,
+  [Symbol(kIsCachedByESMLoader)]: false,
+  [Symbol(kURL)]: undefined,
+  [Symbol(kFormat)]: undefined,
+  [Symbol(kIsExecuting)]: true
+}
+{ addFn: [Function: add], subFn: [Function: subtract] }
