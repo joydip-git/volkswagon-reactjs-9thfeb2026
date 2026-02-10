@@ -47,3 +47,39 @@ asynchronity in JS: Promise, async and await keywords
 JS modules
 module formats
 module loaders
+
+
+
+
+JS code execution:
+---------------------
+1. compilation stage (preparation): JS engine takes care of ONLY the declarations (variable and functions)
+2. execution stage
+
+
+crate a package.json  file:
+> npm init --y
+
+transpiler: transformer + compiler
+convert ES6+ code into <ES6+ version code for browser backward compatibility
+JS => babel compiler
+
+Babel:
+---------------
+Babel compilet uses a series of "transformers" to convert ES6+ code into <ES6+ version code (vanilla JS)
+such as a transformer to convert let keyword into var keyword
+
+plugins: individual package for individual transformer
+presets: a package which is a collection of certain plugins
+
+core packages: @babel/core
+CLI package: @babel/cli
+plugins/presets: @babel/preset-env 
+
+
+"npm run" CLI command is configured to run a script in package.json file
+if in that script any other script/executable name is mentioned, npm will automatically search for it in ".\node_modules\.bin" path. Hence while writing the script no need to provide full path of the executable
+for example:  "transpile": "babel src --out-dir=dist"
+
+
+

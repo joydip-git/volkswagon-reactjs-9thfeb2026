@@ -3,3 +3,20 @@ JS execution lifecycle:
 https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-javascript-execution-context/
 
 https://medium.com/@bloodturtle/understanding-javascript-execution-context-a-complete-guide-ca80b4c2fb12
+
+Mixins and disadvantage of it: (why react js dumped mixin)
+--------------------------------------------------------
+https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750
+
+MDN link for complete JS:
+-------------------------------
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide
+
+link for JS:
+-----------------
+https://javascript.info/
+
+
+babel documentation:
+------------------------
+https://babeljs.io/docs
