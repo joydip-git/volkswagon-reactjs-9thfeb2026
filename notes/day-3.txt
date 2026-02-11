@@ -6,7 +6,15 @@ in short, if you declare/write a function  in JS using arrow function style, the
 
 callback in JS
 JavaScript array and its methods
+
+
 asynchronity in JS: Promise, async and await keywords
+JS is single threaded. you can NEVER achieve multi-threading through JS.
+But JS can take advantage of the environment inwhcih it is running, such as browser or node js.
+browser (ex: chrome.exe) or node js (node.exe) provides multi-threading facility and JS can take full advantage of it by scheduling a JS function to be executed asynchronously in one of the extra threads.
+
+in ES6 an API, known as Promise was introduced for that purpose
+
 
 1.js
 

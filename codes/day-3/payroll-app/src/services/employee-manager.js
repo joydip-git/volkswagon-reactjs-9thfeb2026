@@ -30,13 +30,16 @@ export class EmployeeManager {
    */
   get(id) {
     let found = null;
+    // if (employees.length > 0) {
+    //   for (const e of employees) {
+    //     if (e.id === id) {
+    //       found = e;
+    //       break;
+    //     }
+    //   }
+    // }
     if (employees.length > 0) {
-      for (const e of employees) {
-        if (e.id === id) {
-          found = e;
-          break;
-        }
-      }
+      found = employees.find(e => e.id === id)
     }
     return found;
   }
