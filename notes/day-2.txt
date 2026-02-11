@@ -96,6 +96,19 @@ the format through which we export members of a JS file and also the way we impo
 	a. export: export member
 	b. import: import {prop1, prop2,...} from 'module-path'
 
+Module loaders:
+------------------------
+a s/w which resolves the import/require/... statements/methods in a JS file (for importing members of another JS file(s)) and loads the required/dependency files in the environment
+Node JS rutime does have a default module loader, which understands common js module format by default
+
+Browser does NOT have any such module loader. If you want any modular JS code based app to work in browser, please supply a module loader s/w to the browser first
+
+different loaders: require js, system js etc.
+
+Require JS module loader: understands AMD module format ONLY
+If you have used ES6 module format (import/export statements) in app during development, then convert the same to AMD to run the app in the browser using Require JS as module loader
+
+
 
 Module object:
 ------------------

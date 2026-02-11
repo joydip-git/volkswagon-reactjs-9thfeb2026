@@ -4,3 +4,27 @@ arrow function
 callback in JS
 JavaScript array and its methods
 asynchronity in JS: Promise, async and await keywords
+
+1.js
+
+export class  Employee{}
+class  Developer{}
+export default Developer
+
+module.exports = {	
+	default:Developer
+	Employee:Employee
+}
+
+2.js
+import { Employee, default as Developer} from './1'
+
+import Developer, { Employee} from './1'
+
+new HTML5 attributes:
+	data-* attribute: to store extra piece of information in HTML tag
+
+	data-main="../dist/index.js"
+
+
+

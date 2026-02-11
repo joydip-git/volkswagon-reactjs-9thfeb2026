@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "transpile": "babel src --out-dir=dist --watch"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,10 @@
   "devDependencies": {
     "@babel/cli": "^7.28.6",
     "@babel/core": "^7.29.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.28.6",
+    "@babel/plugin-transform-modules-amd": "^7.27.1",
     "@babel/preset-env": "^7.29.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.8"
   }
 }
