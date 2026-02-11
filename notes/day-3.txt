@@ -1,5 +1,8 @@
-closure
-arrow function
+closure: JS maintains the state of the lexical environment/all outer scope local data  (declared with var, let or const) for an inner function, even though the outer scopes (created for outer functions) are over by the time you the inner function is getting invoked
+
+
+arrow function:For a any given inner function, arrow function syntax, behind the scene, creates a bound inner function that has the same body as the original function. The "this" property of ontext object of the bound inner function is associated with object, to which the immediate outer function's this property is bound to.
+in short, if you declare/write a function  in JS using arrow function style, the said function will be connected to the same "this" object as that of its immediate outer function's "this" object
 
 callback in JS
 JavaScript array and its methods
