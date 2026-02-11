@@ -63,4 +63,5 @@ Note: steps to follow
 			"app":"node ./output-folder-name/index.js"
 		}
 	}
+5. create .babelrc file and add the configuration so that babel core compiler can use preset-env and transformer for module conversion (es6 to common js)
 
