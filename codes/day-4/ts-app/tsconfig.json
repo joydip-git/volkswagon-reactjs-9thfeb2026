@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "module": "commonjs",
+        "target": "es5",
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": [
+            "DOM",
+            "ES2022"
+        ]
+    },
+}

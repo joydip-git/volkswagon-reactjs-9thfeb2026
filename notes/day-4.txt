@@ -29,8 +29,25 @@ in this way, in React JS, all components return different React Elements and the
 this phase when the whole React JS element tree (VDOM) is  translated into a HTML DOM and then displayed/injected inside the HTML file for the ver first time is known as mounting
 
 
-tool to create boilerplate code/project for React JS
+tool to create boilerplate code/project for React JS:
+create-react-app or vite
+vite: build tool
 
+>npm create vite@latest
+
+
+TypeScript:
+superset of JS
+advantages:
+	strict data typing
+	static type checking
+TS is a development mode language. it has to be converted (transpiled) back to JS in order to run the app
+
+transpiler: convert ES6+ feature based code to vailla JS
+a. ES6+ based JS code -> vanilla JS code: babel
+b. ES6+ based TS code -> vanilla JS code: typescript compiler (tsc)
+
+*.d.ts
 
 
 
