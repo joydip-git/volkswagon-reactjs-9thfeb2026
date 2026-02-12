@@ -1,0 +1,10 @@
+promise api: the job of this api is to execute a method asynchronously without blocking main JS single thread, by delegating the task to another thread in the runtime environments, such as node js or browser.
+
+state property of the promise object created by the api initially has a value "pending", which needs to be updated to either "fulfilled/resolved" or "rejected" by calling Resolve() and Reject() method or Promise object respectively
+
+the result property of the promise object stores the return value of the task/function 
+
+upon getting resolved, the promise api calls the callback method passed to it's then() method and passes the result (in case the method has passed the output to the resolve() method) or nothing to that callback function
+upon getting rejected, the promise api calls the callback method passed to it's catch() and passes the reason for error to that callback function
+
+await keyword can be used with a promise ONLY when the awaitable code is written inside a function declared with async keyword
