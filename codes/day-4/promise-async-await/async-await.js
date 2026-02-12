@@ -7,7 +7,7 @@ const divide = async (a, b) => {
     return result
 }
 
-const add = (a, b) => a + b
+const add = async (a, b) => a + b
 
 /*
 const promiseObject = divide(12, 3)
@@ -23,14 +23,16 @@ promiseObject
 */
 async function callDivide() {
     try {
-        const p = divide(12, 3)
-        const data = await p
-        console.log(data);
+        // const p = divide(12, 3)
+        // const data = await p
+        const data = await divide(12, 3)
+        const addRes = await add(data, 3)
+        console.log(addRes);
     } catch (err) {
         console.log(err)
     }
 }
 callDivide()
 
-const addRes = add(12, 3)
-console.log(addRes);
+// const addRes = add(12, 3)
+// console.log(addRes);

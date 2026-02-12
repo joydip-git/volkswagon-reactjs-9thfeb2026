@@ -8,3 +8,29 @@ upon getting resolved, the promise api calls the callback method passed to it's 
 upon getting rejected, the promise api calls the callback method passed to it's catch() and passes the reason for error to that callback function
 
 await keyword can be used with a promise ONLY when the awaitable code is written inside a function declared with async keyword
+
+
+component => reusable piece of code
+
+web component => piece of design (template) + data + event handler
+
+template => .html
+code => .js
+
+web component based single page application
+
+React JS:
+-----------------------
+Is a JS library which helps you create web component based single page application
+instead of writing the design through pure JS in every component, React JS offers a syntax to do the same, known as JSX  (JavaScript and XML)
+a component in React JS is nothing BUT a function which returns a React Element
+in this way, in React JS, all components return different React Elements and then a bootstrapper file (main.js) first converts all those React Elements (Virtual DOM) into corresponding HTML elements (HTML DOM) by using "render()" method from React JS library. 
+
+this phase when the whole React JS element tree (VDOM) is  translated into a HTML DOM and then displayed/injected inside the HTML file for the ver first time is known as mounting
+
+
+tool to create boilerplate code/project for React JS
+
+
+
+
