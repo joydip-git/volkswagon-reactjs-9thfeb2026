@@ -85,5 +85,42 @@ Binding:
 StrictMode => It is a built-in React Component.
 Lets you find common bugs in your components early during development
 
+atomicity:
+------------------
+1. state-full component: a component where you maintain state of data
+2. stateless component: a component where you don't maintain any state, rather the component receives data from its parent and simply displays it. also known as presentational component.
+
+nested component:
+-------------------
+a component nested inside another component as a child
+
+design pattern: lifting the state up
+-----------------------------------------
+1. treat one component (statefull) a source of data
+2. pass down the parent state data to the children
+3. if any child updates the state data in parent the whole parent VDOM tree (includes the children) is re-rendered. as a result all the children gets the same updated data
+
+
+how to pass parent component data and handler functions to any child component???
+---------------------------------------------------------------------------------
+via props or property object
+React JS allows to you pass data and handler functions via some attributes (in JSX) of the component
+behind the scence React JS creates an object, known as property object, with those attributes as properties in that objecr along with data and passes that property object to the function component as an argument
+the property object is read-only. don't modify the property values. that will crash the app. the data that has been passed from parent to child should be displayed as it is to maintain consistency.
+
+
+
+how to pass data from child component back to its parent component:
+--------------------------------------------------------------------
+via event binding
+pass a handler function from parent component to the child component through some property of child component and then call the handler function from some event of the child component design element and pass data the through that function
+
+
+rfc
+rfce
+rafc
+rafce
+
+
 
 

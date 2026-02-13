@@ -1,4 +1,6 @@
 import { useState, type InputEvent } from "react";
+import Title from "./Title";
+import Display from "./Display";
 
 const App = function () {
   console.log('rendered');
@@ -23,23 +25,21 @@ const App = function () {
     setTitle(newTitle)
   }
 
+  // const titleElement = Title({titleValue:title, handler:titleHandler})
   return (
     <div>
-      <div>
-        <label htmlFor="txtTitle">Title: &nbsp;</label>
-        <input type="text" id="txtTitle" value={title}
-          onInput={
-            (e) => {
-              const inputElement = e.target as HTMLInputElement
-              titleHandler(inputElement.value)
-            }
-          } />
-      </div>
-      <p>
-        Title:&nbsp;{title}
-      </p>
+      <Title titleValue={title} handler={titleHandler} />
+      {
+        /* titleElement*/
+      }
+      <br />
+      <Display titleData={title} />
     </div>
   )
 }
 
 export default App
+
+/**
+ * { titleValue:, handler:}
+ */
