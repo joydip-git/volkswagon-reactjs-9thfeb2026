@@ -1,0 +1,38 @@
+create a react application, through which an user can
+	- view a list of products
+	- view a particular product detail
+	- add a new product
+	- update an existing product
+	- delete an existing product
+
+resources: 
+a text file "sample-product-data" has been uploaded in the "case-study" foldr in git repo.
+the file contains sample product data in JSON format.
+
+the current task is to create a react application and in that create a component which will display all the product records from the given sample data [only first feature to be implemented]
+
+Instuctions:
+-------------------------
+1. use the following command to create a typescript based react application named: pms-app
+>npm create vite@latest [choose typescript version]
+
+model: create a model type to represent each product present in the sample product array
+2. create a folder "models" inside the "src" directory
+3. create a file named, "product.ts" inside the "models" folder
+4. now inside the file create a custom type named "Product" with all the required properties and data types, to represent a model for product [refer the sample product data for the property names and their values to understand the data types, too]
+
+data: declare an array variable to store the sample data to be used from different components
+5. create a folder "repository" inside the "src" directory
+6. create a file named, "products.ts" inside the "repository" folder
+7. declare an array variable to store the sample data (the array should be of product type array)
+
+component:
+8. create a folder "components" inside "src" directory
+9. create a folder "products" inside the "components" directory
+10. create a folder "product-list" inside the "products" folder
+11. create a file, named, "ProductList.tsx" inside the "product-list" folder
+12. display the list of products (present in the products.ts file array) in the component
+	Hint: better to save the product array in the component state,in case, in future we need to update the component based on any changes in the product array
+
+13. finally nest the ProductList component in the App component
+14. run the application
