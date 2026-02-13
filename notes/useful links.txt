@@ -25,3 +25,12 @@ https://babeljs.io/docs
 module formats in JS:
 ----------------------------
 https://dev.to/fkkarakurt/javascript-module-formats-and-tools-3mg9
+
+you tube react tutorial:
+--------------------------------
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3
+
+react hooks tutorial:
+--------------------------
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A
+watch [1-5] for useState

@@ -115,6 +115,14 @@ how to pass data from child component back to its parent component:
 via event binding
 pass a handler function from parent component to the child component through some property of child component and then call the handler function from some event of the child component design element and pass data the through that function
 
+how to render a collection?
+-------------------------------------
+displaying a an array/list of React Elements
+every child in the list of react elements, MUST/SHOULD have an unique key (built-in property of every React Element) property value, just to improve performance
+if the list is altered and the component re-renders, the key property will help React JS diffing algo to track the changes/differences btn two VDOMs (previous and new) very easily
+key property value NO only should be unique, it should be fixed (does not change every time the React element re-renders)
+Note: do not use index position of the element in the array as key property value. it is an anti-pattern.
+key property should be used with the root element in the design 
 
 rfc
 rfce
