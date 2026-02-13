@@ -1,31 +1,42 @@
-import { useState } from "react";
+import { useState, type InputEvent } from "react";
 
 const App = function () {
   console.log('rendered');
 
-  //let title = 'Welcome to React JS Component'
-  // const arr = useState('Welcome to React JS Component')
-  // const title = arr[0]
-  // const setTitle = arr[1] 
   const [title, setTitle] = useState<string>('Welcome to React JS Component')
-  console.log(title);
-  
-  const divClickHandler = () => {
-    console.log(title);
-    // title = 'VDOM'
-    //setTitle('Welcome to State...')
-    setTitle(
-      (currentState) => {
-        return currentState.concat(' and State...')
-      }
-    )
-    console.log(title);
+
+  // const titleHandler = (e: InputEvent) => {
+  //   const inputElement = e.target as HTMLInputElement
+  //   setTitle(
+  //     (currentState) => {
+  //       return currentState.concat(' ' + inputElement.value)
+  //     }
+  //   )
+  // }
+
+  const titleHandler = (newTitle: string) => {
+    // setTitle(
+    //   (currentState) => {
+    //     return currentState.concat(' ' + newTitle)
+    //   }
+    // )
+    setTitle(newTitle)
   }
 
   return (
-    <div onClick={divClickHandler}>
+    <div>
+      <div>
+        <label htmlFor="txtTitle">Title: &nbsp;</label>
+        <input type="text" id="txtTitle" value={title}
+          onInput={
+            (e) => {
+              const inputElement = e.target as HTMLInputElement
+              titleHandler(inputElement.value)
+            }
+          } />
+      </div>
       <p>
-        {title}
+        Title:&nbsp;{title}
       </p>
     </div>
   )

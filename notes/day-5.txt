@@ -50,6 +50,11 @@ in order to update the component UI
 
 Note: the "set" method is asynchronous. it does not block the thread and hence you will proceed to next line of code immediately whereas the state of the component is being updated parallely
 
+a type of state depends on what value you want to save in it. it can be string , number, Boolean, object etc.
+there can be more than one state for a component and each can be of different types
+state should be mutated immutably
+state is a component's intrinsic property/asset. the state of a component can not be shared with any other component
+
 
 function useState<T>(initial:T){
 	let data = initial
@@ -71,6 +76,10 @@ const [title, setTitle] = useState('welcome...')
 setTitle('VDOM')
 
 
+Binding:
+-------------
+1. data binding: flow of data is from code to the UI of the component
+2. event binding: flow of data is from the UI of the component to the code of the component
 
 
 StrictMode => It is a built-in React Component.

@@ -1,0 +1,5 @@
+in react component maintain a number value (default 0) in the state
+increase the value by click of a button (type='button') and display the same in the UI
+
+also have a textbox, where by default any name is displayed and the same name is also displayed below
+upon changing the name in the text box the name below is also updated
