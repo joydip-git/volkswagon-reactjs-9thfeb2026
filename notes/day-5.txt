@@ -1,0 +1,80 @@
+React JS:
+------------
+a JS library which helps to create a SPA which runs at the front-end (client-side)
+the react app is collection of components
+
+to create React JS app:
+--------------------------
+build tools: vite and create-react-app (deprecated)
+frameworks: Next JS, Gatsby, React Router, Redwood etc.
+
+React Component:
+-------------------------
+a function that returns a react element
+
+JSX
+-----------
+JavaScript and XML => the syntax used by React JS to design the React component UI
+in this syntax ONLY ONE root React element is possible, just like XML, where only one root element is possible in the entire XML document. Hence the name.
+
+the data and event handlers (functions) are attached with any element by "binding" using {} syntax
+
+comments in JSX: {/* */}
+
+
+Virtual DOM
+---------------
+a tree of React elements created by React JS app
+this VDOM is translated into HTML DOM by render() method of the Root element of React JS. 
+every time the React app is run, the whole React App design is rendered in the UI this way, known as mounting phase
+
+Hydration:
+------------
+when the React app starts initially the HTML page is rendered in the browser without any React component design. the HTML page is said to be "dehydrated" at that point. in the meantime the code in the main.jsx/.tsx file starts getting executed and a moment later the complete React app design is rendered in the placeholder HTML element (<div id='root'></div>). the HTML page is said to be "hydrated" at that moment. this whole process is known as "hydration"
+
+How the UI is updated?
+----------------------
+if the data in any component changes React creates a fresh version of VDOM for that component by re-calling the component.
+then using "diffing" algorithm React compares the previous VDOM and new VDOM and tracks the changes in the respective components and simply updates the corresponding HTML DOM elements, rather than mounting the whole HTML DOM again.
+
+the component can be called by React runtime over again if...
+1. the state of data (to be tracked) is maintained for a component by using useState() method
+this method creates a storage for this component and stores the default value that you passed to the useState() method
+the method returns an array with 2 index position.
+in the 1st index: the copy of the data is stored
+in the 2nd index: a reference to a function (to update that data) is stored
+
+in order to update the component UI
+	1. first update the state of the component by calling the "set" function (to update the state at the 2nd index)
+	2. this will cause the React to call the component once more and pass the copy of the updated data from the state
+
+Note: the "set" method is asynchronous. it does not block the thread and hence you will proceed to next line of code immediately whereas the state of the component is being updated parallely
+
+
+function useState<T>(initial:T){
+	let data = initial
+	
+	function update(newData:T){
+		data = newData
+	}
+
+	function update(callback:(oldState:T) => T){
+		let newData = callback(data)
+		data = newData
+	}
+
+	return [data, update]
+}
+
+const [title, setTitle] = useState('welcome...')
+
+setTitle('VDOM')
+
+
+
+
+StrictMode => It is a built-in React Component.
+Lets you find common bugs in your components early during development
+
+
+
