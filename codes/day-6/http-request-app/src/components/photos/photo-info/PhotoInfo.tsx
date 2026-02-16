@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import type { Photo } from "../../../services/photo"
 import { getPhotoById } from "../../../services/photo-service"
 
@@ -14,6 +14,10 @@ const PhotoInfo = (props: Readonly<PhotoInfoPropType>) => {
 
     //when to call this method???
     const fetchPhotoInfo = async () => {
+        //re-setting the state before every fetch
+        setRequestOver(false)
+        setPhoto(undefined)
+        setErrorInfo('')
         try {
             const data = await getPhotoById(photoId)
             setPhoto(data)
@@ -26,9 +30,21 @@ const PhotoInfo = (props: Readonly<PhotoInfoPropType>) => {
         }
     }
 
+    useEffect(
+        () => {
+            setTimeout(
+                () => {
+                    console.log('starting to fetch a photo with id..' + photoId);
+                    fetchPhotoInfo()
+                },
+                2000
+            )
+        }, [photoId] //if photoId value changes, then the callback will ebe executed
+    )
+
     let design
     if (!requestOver)
-        design = <span> Loading....</span>
+        design = <span> Loading...please wait...</span>
     else if (errorInfo !== '')
         design = <span>{errorInfo}</span>
     else if (!photo)
@@ -48,6 +64,7 @@ const PhotoInfo = (props: Readonly<PhotoInfoPropType>) => {
             </div>
         )
 
+    console.log('returninbg the PI VDOM');
     return design
 }
 

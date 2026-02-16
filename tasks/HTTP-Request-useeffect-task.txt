@@ -1,0 +1,11 @@
+create a react application which fetches all the posts (10) from the given RESTful API app [https://jsonplaceholder.typicode.com/posts] and displays in a component (PostList) when the component is rendered for the very first time.
+Note: display only the title and id of the post
+
+when you select a particulat post title, from the dipsplayed list of posts in the PotsList component, the selected post's id should be passed from PostList to another component PostDetail (nested inside the PostList and below the existing design of PostList) which will be displaying the complete details of that selected post
+
+topics to be used: 
+	HTTP requests via axios/fetch
+	useEffect method (component lifecycle)
+	state
+	props
+	nested component

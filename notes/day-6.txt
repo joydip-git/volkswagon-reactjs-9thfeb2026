@@ -7,3 +7,63 @@ axios:
 ------------
 several methods to send HTTP request:
 	get(), post(), put(), delete(), patch(), .....
+
+
+situation:
+---------------------
+
+a component might need to execute an async operation to fetch data from outside system (file, RESTful API etc.) one time, after initial render (some fallback render)
+
+a component might need to execute an async operation repeatedly to fetch data from outside system (file, RESTful API etc.), after initial render (some fallback render)
+
+component lifecycle and useEffect:
+----------------------------------------
+some code needs to be executed at different point of time frame for a component without any user interaction event (button click etc.)
+
+//register and get an side-effect causing code to be excuted ALWAYS after the component has returned the React element
+//do this by passing a callback function with side-effect causing code to the useEffect() method
+//also pass an array of dependencies, change in values of any one of those dependencies will cause the side-effect causing to be executed again
+
+useEffect(
+	()=>{
+		//code to fetch your data
+	},
+	[] -> optional dependency list
+)
+
+what is that callback?
+----------------------------
+the callback function passed to useEffect method is initially registered with React but not executed immediately
+after the component returns the react element, then React will execute the callback function
+
+when it is executed?
+---------------------------
+as second argument if you pass a dependency list with the value(s), then whenever any of those value(s) changes, immediately the callback will be executed (after the component has returned the initial design)
+the dependency list is used to control when the callback function should be executed
+
+if you pass a blank dependency list, then the callback function is executed ONLY ONE TIME till the component has been un-mounted and executed all over again the same component is mounted back in the HTML DOM
+
+useEffect( 
+	()=> {//code},[]
+)
+
+if you DON'T pass the dependency list as the second argument, the side-effect code (callback) will be executed over and again (every time)
+
+useEffect( 
+	()=> {//code}
+)
+
+if you pass a dependency list with some value(s), then the callback function is executed whenever and if any of those values change
+
+useEffect( 
+	()=> {//code},[value1, value2,..]
+)
+
+
+mounting: rendering the component in the HTML DOM for the very first time
+updating: re-rendering the component (creating a fresh VDOM for the component) and updating the existing corresponding HTML element in the HTML DOM
+un-mounting: taking the component down from the HTML DOM (NOT making it hidden) completely (destroying the component)
+
+<element hidden = true/false>
+
+

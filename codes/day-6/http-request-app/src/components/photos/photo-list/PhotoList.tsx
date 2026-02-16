@@ -1,27 +1,45 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { getPhotos } from "../../../services/photo-service"
 import { type Photo } from "../../../services/photo"
 import PhotoInfo from "../photo-info/PhotoInfo"
+import PhotoRow from "../photo-row/PhotoRow"
 
 const PhotoList = () => {
   const [photos, setPhotos] = useState<Photo[]>([])
   const [errorInfo, setErrorInfo] = useState('')
   const [requestOver, setRequestOver] = useState(false)
-
   const [selectedPhotoId, setSelectedPhotoId] = useState<number>(0)
 
+  const selectedPhotoIdHandler = (id: number) => {
+    setSelectedPhotoId(id)
+  }
   const fetchPhotos = async () => {
     try {
       const data = await getPhotos()
+      //batch update will take place here
       setPhotos(data)
       setErrorInfo('')
       setRequestOver(true)
     } catch (error: any) {
+      //batch update will take place here
       setRequestOver(true)
       setPhotos([])
       setErrorInfo(error.message)
     }
   }
+
+  useEffect(
+    () => {
+      setTimeout(
+        () => {
+          console.log('staring to fetch data');
+          fetchPhotos()
+        },
+        3000
+      )
+    },
+    []
+  )
 
   let photosDesign
 
@@ -47,17 +65,7 @@ const PhotoList = () => {
               photos.map(
                 (photo) => {
                   return (
-                    <tr key={photo.id}>
-                      <td>
-                        <img src={photo.thumbnailUrl} alt="NA" />
-                      </td>
-                      <td onClick={
-                        () => setSelectedPhotoId(photo.id)
-                      }>
-                        <u>{photo.title}</u>
-                      </td>
-                      <td>{photo.albumId}</td>
-                    </tr>
+                    <PhotoRow photo={photo} handler={selectedPhotoIdHandler} key={photo.id} />
                   )
                 }
               )
@@ -73,15 +81,17 @@ const PhotoList = () => {
       </div>
     )
 
-  return (
-    <div>
-      <button type="button" onClick={fetchPhotos}>Load Data</button>
-      <br />
-      {
-        photosDesign
-      }
-    </div>
-  )
+  console.log('returning the PL VDOM');
+  return photosDesign
+  // return (
+  //   <div>
+  //     <button type="button" onClick={fetchPhotos}>Load Data</button>
+  //     <br />
+  //     {
+  //       photosDesign
+  //     }
+  //   </div>
+  // )
 }
 
 export default PhotoList

@@ -19,12 +19,12 @@ Instuctions:
 model: create a model type to represent each product present in the sample product array
 2. create a folder "models" inside the "src" directory
 3. create a file named, "product.ts" inside the "models" folder
-4. now inside the file create a custom type named "Product" with all the required properties and data types, to represent a model for product [refer the sample product data for the property names and their values to understand the data types, too]
+4. now inside the file create a custom type/interface in TS, named "Product" with all the required properties and data types, to represent a model for product [refer the sample product data for the property names and their values to understand the data types, too] and export the same to be used in other files
 
 data: declare an array variable to store the sample data to be used from different components
 5. create a folder "repository" inside the "src" directory
 6. create a file named, "products.ts" inside the "repository" folder
-7. declare an array variable to store the sample data (the array should be of product type array)
+7. declare an array variable to store the sample data (the array should be of product type array) and export the same to be used in other files
 
 component:
 8. create a folder "components" inside "src" directory
