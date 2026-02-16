@@ -1,0 +1,9 @@
+fetching data from RESTful API server by sending HTTP Request
+----------------------------------------------------------------
+1. using DOM API: fetch() method
+2. using 3rd party API: ex. axios
+	
+axios:
+------------
+several methods to send HTTP request:
+	get(), post(), put(), delete(), patch(), .....
