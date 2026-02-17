@@ -35,3 +35,30 @@ Hooks can't be used in class component. Hooks have to be used in a functional co
 Effect Hook:
 ---------------------
 look at day-6 notes
+
+sharing data:
+--------------------
+A. in the same component tree:
+1. how to pass data from a parent component to a shallow nested component: via props
+	[child receiving data from immediate parent]
+
+2. how to pass data from a parent component to a deeply nested component: via context
+	via props -> NOT a practical solution
+
+
+Context:
+--------------
+an object that can be used to share data across multiple components, provided those components are in the same component tree.
+1. createContext<T>() => method to create a context object with T as the type of data to store 
+2. In a parent component wrap the component tree inside 
+	<ContextObject.Provider value={<data to be supplied>}> 
+		... 
+	</ContextObject.Provider>
+
+3. In deeply nested component use "useContext()" method and supply the context object as an argument. the hook will return data inside the context object.
+ 	const data = useContext(ContextObject)
+
+
+Note: if there are more than one provider for the same context in the component tree, then consumer will get the data supplied by the nearest provider
+
+You can use multiple context for the same component tree

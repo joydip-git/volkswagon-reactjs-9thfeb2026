@@ -6,7 +6,7 @@ create a react application, through which an user can
 	- delete an existing product
 
 resources: 
-a text file "sample-product-data" has been uploaded in the "case-study" foldr in git repo.
+a text file "sample-product-data" has been uploaded in the "case-study" folder in git repo.
 the file contains sample product data in JSON format.
 
 the current task is to create a react application and in that create a component which will display all the product records from the given sample data [only first feature to be implemented]
@@ -41,12 +41,24 @@ component:
 
 
 Part-2:
-1. run the backend server provided
+15. later create a component "ProductRow" in a file "ProductRow.tsx" in a folder "product-row" inside "src/components/products" path
+16. this component will receive a product object from parent component through a property and display the product detail thrugh a <tr> element
+
+
+Part-3:
+use the "product-service-backend" supplied through the "backend-server" folder present in the "case-study" folder
+a. open the same in  VS Code
+b. add an environment file ".env" at the root of the app directory
+c. copy the settings present in the "env.txt" file supplied in the "backend-server" folder and paste the same in the ".env" file
+d. run the following the script in the terminal: >npm run start
+
+
+1. run the backend server provided as instructed earlier
 2. create a folder "services" in the "src" directory
 3. add a file "product-service.ts" 
 4. write a function to and add code in it to send an HTTP request to fetch all product records
 5. call the function from the "ProductList" component
 6. render the data returned
 Note: 
-a. consider rendering a fallback content while data is being fetched frm backend
+a. consider rendering a fallback content while data is being fetched from backend
 b. consider rendering a content while error is thrown by the backend server or by network failure

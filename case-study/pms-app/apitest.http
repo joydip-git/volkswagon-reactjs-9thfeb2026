@@ -1,0 +1,42 @@
+GET http://127.0.0.1:3003/products
+
+###
+GET http://127.0.0.1:3003/products/1
+
+###
+POST  http://127.0.0.1:3003/products
+Content-Type: application/json
+
+{
+        "productId": 6,
+        "price": 5000,
+        "productName": "abcd",
+        "description": "15 gallon capacity rolling garden cart",
+        "productCode": "GDN-0023",
+        "releaseDate": "March 18, 2019",
+        "starRating": 4,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+    }
+
+
+###
+PUT  http://127.0.0.1:3003/products/6
+Content-Type: application/json
+
+{
+        "productId": 6,
+        "price": 500,
+        "productName": "new product",
+        "description": "15 gallon capacity rolling garden cart",
+        "productCode": "GDN-0023",
+        "releaseDate": "March 18, 2019",
+        "starRating": 5,
+        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+}
+
+
+###
+DELETE http://127.0.0.1:3003/products/6
+
+###
+DELETE http://127.0.0.1:3003/products/60

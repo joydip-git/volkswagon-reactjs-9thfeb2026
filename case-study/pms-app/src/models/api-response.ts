@@ -1,0 +1,9 @@
+// export interface ApiResponse<T> {
+//     message: string;
+//     data: T | null
+// }
+
+export type ApiResponse<T> = {
+    message: string;
+    data: T | null
+}
