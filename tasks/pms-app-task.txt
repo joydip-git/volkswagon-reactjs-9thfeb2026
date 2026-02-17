@@ -11,8 +11,10 @@ the file contains sample product data in JSON format.
 
 the current task is to create a react application and in that create a component which will display all the product records from the given sample data [only first feature to be implemented]
 
-Instuctions:
+Instructions:
 -------------------------
+Part-1:
+
 1. use the following command to create a typescript based react application named: pms-app
 >npm create vite@latest [choose typescript version]
 
@@ -36,3 +38,15 @@ component:
 
 13. finally nest the ProductList component in the App component
 14. run the application
+
+
+Part-2:
+1. run the backend server provided
+2. create a folder "services" in the "src" directory
+3. add a file "product-service.ts" 
+4. write a function to and add code in it to send an HTTP request to fetch all product records
+5. call the function from the "ProductList" component
+6. render the data returned
+Note: 
+a. consider rendering a fallback content while data is being fetched frm backend
+b. consider rendering a content while error is thrown by the backend server or by network failure
