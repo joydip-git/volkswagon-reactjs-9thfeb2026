@@ -9,10 +9,12 @@ const Person = (props: Readonly<PersonPropType>) => {
             <h4>Person Component</h4>
             <br />
             <label htmlFor="txtName">Name: &nbsp;</label>
-            <input type="text" id="txtName" value={personName} onInput={(e) => {
-                const element = e.target as HTMLInputElement
-                handler(element.value)
-            }} />
+            <input type="text" id="txtName"
+                value={personName}
+                onInput={(e) => {
+                    const element = e.target as HTMLInputElement
+                    handler(element.value)
+                }} />
         </div>
     )
 }

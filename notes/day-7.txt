@@ -1,0 +1,37 @@
+different ways to create components in React?
+---------------------------------------------------
+1. function => functional component
+2. class    => class component
+	
+class component properties:
+-------------------------------
+1. state -> Readonly<{}>
+2. props -> Readonly<{}>
+3. key	  
+4. ref
+
+class component methods:
+---------------------------
+1. render() -> render a react element (creating vdom for the react component)
+2. componentDidMount() -> to write side-effect causing that has to be executed ONLY once during the lifecycle of a component instance. executed after the initial render
+3. componentDidUpdate() -> to write side-effect causing code over and again in the lifecycle of a component instance. not executed during the initial render, but from 2nd cycle onwards, inly when the component is updated (by the change in state or by receiving new props from parent)
+4. shouldComponentUpdate() -> stops unnecessary rendering. executed before 'render()' method from the 2nd cycle onwards
+
+state -> a property to which you MUST assign an object
+in class component ONLY one state object is possible
+
+Hooks in React:
+---------------------
+Some APIs (functions), with a name, starting with a prefix "use", whose job is to hook a functional component with something, such as 
+	1. a state: useState 
+	2. a function with side-effect causing code which needs to be executed after the return of the react element from the functional component: useEffect
+	3. to memorize a expensive calculation/code (function): useMemo
+	etc.
+
+Hooks were introduced in React JS to provide the same facilities that class component enjoys, in the functional component, such as maintaining state, lifecycle, memorize value etc.
+
+Hooks can't be used in class component. Hooks have to be used in a functional component or from a custom hook. hooks should be used at the beginning of the component.
+
+Effect Hook:
+---------------------
+look at day-6 notes

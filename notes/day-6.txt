@@ -12,24 +12,28 @@ several methods to send HTTP request:
 situation:
 ---------------------
 
-a component might need to execute an async operation to fetch data from outside system (file, RESTful API etc.) one time, after initial render (some fallback render)
+a component might need to execute an async operation to fetch data from outside system (file, RESTful API, file, web socket etc.) one time, after initial render (some fallback render)
 
-a component might need to execute an async operation repeatedly to fetch data from outside system (file, RESTful API etc.), after initial render (some fallback render)
+a component might need to execute an async operation repeatedly to fetch data from outside system (file, RESTful API, file, web socket etc.), after initial render (some fallback render)
 
 component lifecycle and useEffect:
 ----------------------------------------
-some code needs to be executed at different point of time frame for a component without any user interaction event (button click etc.)
+some code needs to be executed at different point of time frame for a functional component without any user interaction event (button click etc.)
 
 //register and get an side-effect causing code to be excuted ALWAYS after the component has returned the React element
 //do this by passing a callback function with side-effect causing code to the useEffect() method
 //also pass an array of dependencies, change in values of any one of those dependencies will cause the side-effect causing to be executed again
 
-useEffect(
-	()=>{
-		//code to fetch your data
-	},
-	[] -> optional dependency list
-)
+function Test(){
+	useEffect(
+		()=>{
+			//code to fetch your data
+		},
+		[] -> optional dependency list
+	)
+
+	retrun <div>...</div>
+}
 
 what is that callback?
 ----------------------------
@@ -38,22 +42,21 @@ after the component returns the react element, then React will execute the callb
 
 when it is executed?
 ---------------------------
-as second argument if you pass a dependency list with the value(s), then whenever any of those value(s) changes, immediately the callback will be executed (after the component has returned the initial design)
 the dependency list is used to control when the callback function should be executed
 
-if you pass a blank dependency list, then the callback function is executed ONLY ONE TIME till the component has been un-mounted and executed all over again the same component is mounted back in the HTML DOM
+1. if you pass a blank dependency list, then the callback function is executed ONLY ONE TIME till the component has been un-mounted and executed all over again when the same component is mounted back in the HTML DOM
 
 useEffect( 
 	()=> {//code},[]
 )
 
-if you DON'T pass the dependency list as the second argument, the side-effect code (callback) will be executed over and again (every time)
+2. if you DON'T pass the dependency list as the second argument, the side-effect code (callback) will be executed over and again (every time) 
 
 useEffect( 
 	()=> {//code}
 )
 
-if you pass a dependency list with some value(s), then the callback function is executed whenever and if any of those values change
+3. if you pass a dependency list with some value(s), then the callback function is executed whenever and if any of those values change
 
 useEffect( 
 	()=> {//code},[value1, value2,..]
@@ -61,7 +64,11 @@ useEffect(
 
 
 mounting: rendering the component in the HTML DOM for the very first time
-updating: re-rendering the component (creating a fresh VDOM for the component) and updating the existing corresponding HTML element in the HTML DOM
+
+updating: re-rendering the component (creating a fresh VDOM for the component) and updating the existing corresponding HTML element in the HTML DOM. re-render misght happen in two scenarios for a component:
+	1. the state of the component got updated
+	2. the component received a new props from parent component
+
 un-mounting: taking the component down from the HTML DOM (NOT making it hidden) completely (destroying the component)
 
 <element hidden = true/false>
