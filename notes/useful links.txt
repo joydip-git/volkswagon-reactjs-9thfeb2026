@@ -35,6 +35,10 @@ react hooks tutorial:
 https://www.youtube.com/playlist?list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A
 watch [1-5] for useState
 
+redux tutorial:
+---------------
+https://www.youtube.com/playlist?list=PLC3y8-rFHvwheJHvseC3I0HuYI2f46oAK
+
 
 flux link:
 -----------------

@@ -3,31 +3,46 @@ import { getPhotos } from "../../../services/photo-service"
 import { type Photo } from "../../../models/photo"
 import PhotoInfo from "../photo-info/PhotoInfo"
 import PhotoRow from "../photo-row/PhotoRow"
+import { useSelector, useDispatch } from "react-redux";
+import type { AppStoreMapType } from "../../../redux/store"
+import {
+  photosFetchFailureActionCreator,
+  photosFetchDefaultResetActionCreator,
+  photosFetchSuccessActionCreator
+} from "../../../redux/store";
 
 const PhotoList = () => {
-  const [photos, setPhotos] = useState<Photo[]>([])
-  const [errorInfo, setErrorInfo] = useState('')
-  const [requestOver, setRequestOver] = useState(false)
+  //useSelector hook provides the reducer map from the redux store to the callback function passed to this hook as an argument
+  const photosSliceState = useSelector((reducerMap: AppStoreMapType) => reducerMap.photosState)
+  const { photos, requestOver, errorInfo } = photosSliceState
+  const dispatch = useDispatch()
+  // const [photos, setPhotos] = useState<Photo[]>([])
+  // const [errorInfo, setErrorInfo] = useState('')
+  // const [requestOver, setRequestOver] = useState(false)
   const [selectedPhotoId, setSelectedPhotoId] = useState<number>(0)
 
   const selectedPhotoIdHandler = (id: number) => {
     setSelectedPhotoId(id)
   }
   const fetchPhotos = async () => {
-    //dispatch({type: 'initiate_request' })
+    //dispatch({type: 'photos_default_reset'})
+    dispatch(photosFetchDefaultResetActionCreator())
     try {
       const data = await getPhotos()
       //batch update will take place here
-      setPhotos(data)
-      setErrorInfo('')
-      setRequestOver(true)
-      //dispatch({type: 'fetch_success', payload/data: data })
+      // setPhotos(data)
+      // setErrorInfo('')
+      // setRequestOver(true)
+      // dispatch({type: 'photos/photos_fetch_success', payload: data })
+      dispatch(photosFetchSuccessActionCreator(data))
     } catch (error: any) {
       //batch update will take place here
-      setRequestOver(true)
-      setPhotos([])
-      setErrorInfo(error.message)
-      //dispatch({type: 'fetch_failure', payload/data: error.message })
+      // setRequestOver(true)
+      // setPhotos([])
+      // setErrorInfo(error.message)
+
+      //dispatch({type: 'photos/photos_fetch_failure', payload: error.message })
+      dispatch(photosFetchFailureActionCreator(error.message))
     }
   }
 

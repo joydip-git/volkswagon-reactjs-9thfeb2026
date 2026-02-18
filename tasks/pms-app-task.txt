@@ -66,8 +66,13 @@ Note:
 a. consider rendering a fallback content while data is being fetched from backend
 b. consider rendering a content while error is thrown by the backend server or by network failure
 
-
 Part-4:
+----------------------------
+use redux store for ProductList component data.
+remove the component's individual states for the same now.
+
+
+Part-5:
 -----------------------------------------
 Introduce routing for the application and implement remaining CRUD features:
 

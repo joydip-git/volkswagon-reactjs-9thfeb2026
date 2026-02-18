@@ -38,8 +38,13 @@ dispatch({ type: 'increase', payload:1 } or {type: 'decrease', payload: 2})
 
 package:
 	redux -> legacy
-	@reduxjs\toolkit -> current	
+	@reduxjs/toolkit -> current	
 
+
+connect react app with redux
+package: react-redux
+
+chrome plugin: redux devtools
 
 const [posts, setPosts]= useState([])
 const [error, setError] = useState('')

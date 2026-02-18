@@ -1,9 +1,11 @@
 const { legacy_createStore, combineReducers } = require('redux')
 
+//useState({counter:0})
 const initialCounterState = {
     counter: 0,
 }
 
+//useState({name:'joydip'})
 const initialNameState = {
     name: 'joydip',
 }
@@ -18,27 +20,27 @@ const nameActionType = {
     FULL_NAME: 'FULL_NAME'
 }
 
-const increaseAction = (value) => {
+const increaseActionCreator = (value) => {
     return {
         type: counterActionType.INCREASE,
         data: value
     }
 }
-const decreaseAction = (value) => {
+const decreaseActionCreator = (value) => {
     return {
         type: counterActionType.DECREASE,
         data: value
     }
 }
 
-const changeNameAction = (newName) => {
+const changeNameActionCreator = (newName) => {
     return {
         type: nameActionType.CHANGE_NAME,
         payload: newName
     }
 }
 
-const fullNameAction = (lastName) => {
+const fullNameActionCreator = (lastName) => {
     return {
         type: nameActionType.FULL_NAME,
         payload: lastName
@@ -68,6 +70,26 @@ const counterReducer = (state = initialCounterState, action) => {
     }
 }
 
+/*
+const increaseCounterReducer = (state = initialCounterState, action) => {
+    if(action.type===actionType.INCREASE)
+        return {
+            ...state,
+            counter: state.counter + action.data
+        }
+        else
+        return {...state}
+}
+const decreaseCounterReducer = (state = initialCounterState, action) => {
+    if(action.type===actionType.DECREASE)
+        return {
+            ...state,
+            counter: state.counter - action.data
+        }
+    else
+        retun {...state}
+}
+*/
 const nameReducer = (state = initialNameState, action) => {
     switch (action.type) {
         case nameActionType.CHANGE_NAME: return {
@@ -94,16 +116,16 @@ const rootReducer = combineReducers({
 const store = legacy_createStore(rootReducer)
 console.log(store.getState());
 // store.dispatch({ type: actionType.INCREASE, data: 2 })
-store.dispatch(increaseAction(2))
+store.dispatch(increaseActionCreator(2))
 console.log(store.getState());
 //store.dispatch({ type: actionType.INCREASE, data: 1 })
-store.dispatch(increaseAction(1))
+store.dispatch(increaseActionCreator(1))
 console.log(store.getState());
 //store.dispatch({ type: actionType.DECREASE, data: 1 })
-store.dispatch(decreaseAction(1))
+store.dispatch(decreaseActionCreator(1))
 console.log(store.getState());
 
-store.dispatch(fullNameAction('Mondal'))
+store.dispatch(fullNameActionCreator('Mondal'))
 console.log(store.getState());
-store.dispatch(changeNameAction('anil kumar'))
+store.dispatch(changeNameActionCreator('anil kumar'))
 console.log(store.getState());
