@@ -13,8 +13,9 @@ the current task is to create a react application and in that create a component
 
 Instructions:
 -------------------------
-Part-1:
 
+Part-1:
+--------------------------------------
 1. use the following command to create a typescript based react application named: pms-app
 >npm create vite@latest [choose typescript version]
 
@@ -41,11 +42,13 @@ component:
 
 
 Part-2:
+------------------------------
 15. later create a component "ProductRow" in a file "ProductRow.tsx" in a folder "product-row" inside "src/components/products" path
 16. this component will receive a product object from parent component through a property and display the product detail thrugh a <tr> element
 
 
 Part-3:
+----------------------------------------
 use the "product-service-backend" supplied through the "backend-server" folder present in the "case-study" folder
 a. open the same in  VS Code
 b. add an environment file ".env" at the root of the app directory
@@ -62,3 +65,60 @@ d. run the following the script in the terminal: >npm run start
 Note: 
 a. consider rendering a fallback content while data is being fetched from backend
 b. consider rendering a content while error is thrown by the backend server or by network failure
+
+
+Part-4:
+-----------------------------------------
+Introduce routing for the application and implement remaining CRUD features:
+
+Flow of the application with routing
+---------------------------------------
+First of all the application must have a dashboard design at the top of the HTML page through a component
+the dashboard will contain a title "PRODUCT MANAGEMENT SYSTEM" and 3 hyperlinks: "Home", "Products" and "Add New Product"
+
+When the application runs with the base url the user should be automatically redirected to Home component
+
+If an user clicks on "Home" link on a dashboard at the top of the page, user should be redirected to Home component
+
+If an user clicks on "Products" link on a dashboard at the top of the page, user should be redirected to ProductList component. The component should fetch all the product records from the backend RESTful API server application by sendinh HTTP request and then display those records through a table element in the design. Only the "image", "name", "price" and "rating" value of eah product should be displayed through a series of rows in the table. the table must also contain a fifth column for "delete". If user clicks on tge "Delete" button in each row, the product must be deleted from the backend and consequentially the product table also must reflect the same.
+
+If an user clicks on any product image displayed in any row in the ProductList component, the user should be redirected to ProductDetail component. The product id of the clicked product image should be appended at the URL while navigating from ProductList to ProductDetail component. The ProductDetail component should extract the product id appended at the end of the URL and should fetch the corresponding product record from the backend server and display the same. the details of the fetched product record must be displayed in the design. the design must contain an "Edit" button too.
+
+Upon clicking the "Edit" button on the ProductDetail component deisgn the user should be redirected to UpdateProduct component. The id of the product, that was being displayed in the ProductDetail component design, should be appended at the URL while navigating from ProductDetail to UpdateProduct component. The UpdateProduct component  should extract the product id appended at the end of the URL and should fetch the corresponding product record from the backend server and display the same. the details of the fetched product record must be displayed in the design. the user should be able to edit those product detail (except the product id) and the click on "Submit" button to update the product record at the backend. upon successful update in the backend, the user should be redirected back to the ProductList component atomatically where the updated product detail should be reflected in product table.
+
+If an user clicks on "Add New Product" link on a dashboard at the top of the page, user should be redirected to AddProduct component, where any user can enter detils of a new product and then by clicking a submit button add that new record at the backend server. User must be automatically redirected to the ProductList component after successful addition of the product at the backend, where the product table must reflect the newly added product.
+
+If any other URL is requested apart from the registered ones, then user should be redirected to the PageNotFound component.
+
+
+
+Routes:
+URL								component to be rendered
+-----------------------------------------------------------------------------------------
+http://localhost:<port-no>/pmsapp/products/all		ProductList
+http://localhost:<port-no>/pmsapp/products/add		AddProduct
+http://localhost:<port-no>/pmsapp/products/view/{id}	ProductDetail
+http://localhost:<port-no>/pmsapp/products/edit/{id}	UpdateProduct
+
+http://localhost:<port-no>/pmsapp/home			Home
+http://localhost:<port-no>/pmsapp/				Home (redirection to home)
+
+any incorrect route other than the registered ones		PageNotFound
+
+To apply the above routes, you first need to create those above mentioned components
+
+1. create components for products feature module
+---------------------------------------------------------
+	a. create a folder "add-product", inside "components/products" directory and add a file "AddProduct.tsx". this will contain a form to enter new product details and then add the same in the backend by clicking a "submit" button
+	b. create a folder "update-product", inside "components/products" directory and add a file "UpdateProduct.tsx". this will contain a form to display a details of a product fetched from back-end server by the id of the product and then edit the existing details (except id of the product) and then update the same in the backend by clicking a "submit" button
+	c. create a folder "product-detail", inside "components/products" directory and add a file "ProductDetail.tsx". this will contain a design to display the details of a product as fetched from baekend server by product id, when an image is clicked in a row in the ProductList component
+
+2. create components for common feature module
+	create a folder "common" under the "components" directory to store all requied components for another feature module "common"
+	a. create folder "home", inside "components/common" and add a file "Home.tsx". this will be a home component for our application.
+	b. create folder "dash-board", inside "components/common" and add a file "DashBoard.tsx". this will contain a design for dash board for our application, which will be always displayed at the top of the HTML page
+	d. create folder "page-not-found", inside "components/common" and add a file "PageNotFound.tsx". this will be a component for our application, which will be rendered whenever you try to navigate to an unregistered route.
+
+
+Note: ProductList component which is currently nested inside App component will be not be rendered as a nested component anymore. Hence remove the ProductList as nested component from App and instead you need to load components dynamically based on the change in routes. 
+

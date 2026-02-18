@@ -1,0 +1,57 @@
+sharing data:
+--------------------
+B. across component irrespective of whether they are in the same component tree or different component tree
+
+application wide state-management
+-------------------------------------
+maintain state of some data outside any component
+a component has to subscribe to that state in order manipulate or access that data
+any component can access that state data, update the state data etc.
+as a result the components which are subscribed to that state will be notified
+
+flux and redux:
+---------------------
+flux => data flow and state management mechanism/design pattern for a large application
+Flux uses a unidirectional data flow pattern
+
+Redux => the implementation of the flux design pattern
+3rd party library for application state management
+if it is a large enterprise level application then use mechanism
+
+terminologies:
+-----------------------
+state => an object which is managed by the redux
+reducer => a function with logic to update the state and return a new state with updated data to the store
+reducer map => an object which will have multiple properties, each of them referring to one slice (a reducer + a state) in the store
+store => collection of individual states and theor corresponding reducer functions
+
+React app has to be connected to the Redux store
+the Reducer Map will be available to every component, so that any component can subscribe to a slice of the store through a property in the reducer map
+Also, "dispatch" function (Which is used to dispatch an action against the store for any kind of state update), available with the store is also made available to the react app components
+
+In order to update the state in the store, a component must "dispatch" an "action" against the store
+
+action => an object with a mandatory property "type", that describes which type of action to perform on the state. the type should have a string type value.
+it might have any random property (such as: payload/data/..) in case data has to be sent to the store in order to update the state
+
+dispatch({ type: 'increase'} or {type: 'decrease'})
+
+
+
+
+const [posts, setPosts]= useState([])
+const [error, setError] = useState('')
+const [loadingOver, setLoadingOver] = useState(false)
+
+const [state, setState] = useState({posts:[], error:'', loadingOver: false})
+
+state.posts/.error/.loadingOver
+
+
+const [state,setState] = useState({post: undefined, error:'', loadingOver: false})
+
+
+
+
+
+

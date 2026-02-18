@@ -1,7 +1,7 @@
 different ways to create components in React?
 ---------------------------------------------------
-1. function => functional component
-2. class    => class component
+1. function => functional component [stateless]
+2. class    => class component [stateful]
 	
 class component properties:
 -------------------------------
@@ -30,7 +30,7 @@ Some APIs (functions), with a name, starting with a prefix "use", whose job is t
 
 Hooks were introduced in React JS to provide the same facilities that class component enjoys, in the functional component, such as maintaining state, lifecycle, memorize value etc.
 
-Hooks can't be used in class component. Hooks have to be used in a functional component or from a custom hook. hooks should be used at the beginning of the component.
+Hooks can't be used in class component. Hooks have to be used in a functional component or from a custom hook. hooks should be used at the beginning of the component. One hook can't be used from another hook
 
 Effect Hook:
 ---------------------

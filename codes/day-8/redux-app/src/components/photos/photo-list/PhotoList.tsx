@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getPhotos } from "../../../services/photo-service"
-import { type Photo } from "../../../services/photo"
+import { type Photo } from "../../../models/photo"
 import PhotoInfo from "../photo-info/PhotoInfo"
 import PhotoRow from "../photo-row/PhotoRow"
 
@@ -14,17 +14,20 @@ const PhotoList = () => {
     setSelectedPhotoId(id)
   }
   const fetchPhotos = async () => {
+    //dispatch({type: 'initiate_request' })
     try {
       const data = await getPhotos()
       //batch update will take place here
       setPhotos(data)
       setErrorInfo('')
       setRequestOver(true)
+      //dispatch({type: 'fetch_success', payload/data: data })
     } catch (error: any) {
       //batch update will take place here
       setRequestOver(true)
       setPhotos([])
       setErrorInfo(error.message)
+      //dispatch({type: 'fetch_failure', payload/data: error.message })
     }
   }
 

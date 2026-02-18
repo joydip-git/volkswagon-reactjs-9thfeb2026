@@ -34,3 +34,13 @@ react hooks tutorial:
 --------------------------
 https://www.youtube.com/playlist?list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A
 watch [1-5] for useState
+
+
+flux link:
+-----------------
+https://www.freecodecamp.org/news/how-to-use-flux-in-react-example/
+
+
+redux link:
+-----------------
+https://blog.logrocket.com/understanding-redux-tutorial-examples/

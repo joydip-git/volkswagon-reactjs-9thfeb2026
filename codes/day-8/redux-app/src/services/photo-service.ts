@@ -1,4 +1,4 @@
-import type { Photo } from "./photo"
+import type { Photo } from "../models/photo"
 import Axios, { type AxiosResponse } from "axios";
 
 export async function getPhotos(): Promise<Photo[]> {
