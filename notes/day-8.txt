@@ -20,7 +20,7 @@ if it is a large enterprise level application then use mechanism
 
 terminologies:
 -----------------------
-state => an object which is managed by the redux
+state => an object which is managed by the redux, a collection of properties with values
 reducer => a function with logic to update the state and return a new state with updated data to the store
 reducer map => an object which will have multiple properties, each of them referring to one slice (a reducer + a state) in the store
 store => collection of individual states and theor corresponding reducer functions
@@ -34,9 +34,11 @@ In order to update the state in the store, a component must "dispatch" an "actio
 action => an object with a mandatory property "type", that describes which type of action to perform on the state. the type should have a string type value.
 it might have any random property (such as: payload/data/..) in case data has to be sent to the store in order to update the state
 
-dispatch({ type: 'increase'} or {type: 'decrease'})
+dispatch({ type: 'increase', payload:1 } or {type: 'decrease', payload: 2})
 
-
+package:
+	redux -> legacy
+	@reduxjs\toolkit -> current	
 
 
 const [posts, setPosts]= useState([])
