@@ -1,27 +1,19 @@
 import './App.css'
-import { decreaseActionCreator, increaseActionCreator } from './redux/counterslice'
-import { useTypedDispatch, useTypedSelector } from './redux/typedhooks'
+import CounterManipulator from './CounterManipulator'
+import NameManipulator from './NameManipulator'
+import { useTypedSelector } from './redux/typedhooks'
+
 
 const App = () => {
-  const { counter } = useTypedSelector((map) => map.counterState)
-  const dispatch = useTypedDispatch()
-
-  const increaseHandler = () => {
-    const action = increaseActionCreator(2)
-    dispatch(action)
-  }
-  const decreaseHandler = () => {
-    const action = decreaseActionCreator(1)
-    dispatch(action)
-  }
+  const { name } = useTypedSelector(map => map.nameState)
   return (
-    <div>
-      <span>Counter:&nbsp;{counter}</span>
+    <>
+      Name in App: &nbsp;{name}
       <br />
-      <button type="button" onClick={increaseHandler}>Increase</button>
-      &nbsp; &nbsp; &nbsp; &nbsp;
-      <button type="button" onClick={decreaseHandler}>Decrease</button>
-    </div>
+      <NameManipulator />
+      <br />
+      <CounterManipulator />
+    </>
   )
 }
 

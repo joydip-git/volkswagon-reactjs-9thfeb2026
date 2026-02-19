@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import { counterReducer } from "./counterslice";
+import { nameReducer } from "./nameslice";
 
 const reducerMap = combineReducers({
-    counterState: counterReducer
+    counterState: counterReducer,
+    nameState: nameReducer
 })
 
 const loggerMiddleware = createLogger()

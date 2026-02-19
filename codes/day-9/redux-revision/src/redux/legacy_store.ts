@@ -42,6 +42,12 @@ const counterReducer = (state = initialCounterState, action: PayloadActionType<n
     }
 }
 
+// const nameReducer = (state = { name: '' }, action: PayloadActionType<string>) => {
+//     return {
+//         ...state,
+//         name: action.payload
+//     }
+// }
 const reducerMap = combineReducers({
     counterState: counterReducer
 })
