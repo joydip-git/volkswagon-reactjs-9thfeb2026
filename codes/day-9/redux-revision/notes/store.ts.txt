@@ -1,0 +1,32 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { createLogger } from "redux-logger";
+import { counterReducer } from "./counterslice";
+
+const reducerMap = combineReducers({
+    counterState: counterReducer
+})
+
+const loggerMiddleware = createLogger()
+
+//const middlewareChain = applyMiddleware(loggerMiddleware)
+
+//use configureStore() method and pass an object with below properties as an argument to the method
+// 1. 'reducer' to pass the reducer map object
+// 2. 'middleware' property to add the middleware in the given middleware piplline
+const AppReduxStore = configureStore({
+    reducer: reducerMap,
+    middleware: (middlewarePipeline) => {
+        return middlewarePipeline().concat(loggerMiddleware)
+    }
+})
+
+//getState => Reads the state tree managed by the store.
+//one can extract the data type of the return type of the getState method. that is nothing but the data type of reducer ma object
+
+//typeof AppReduxStore.getState -> extracting the data type of getState method
+type GetStateMethodType = typeof AppReduxStore.getState
+
+//ReturnType<GetStateMethodType> -> extracting the return type from the data type of getState method 
+export type ReducerMapType = ReturnType<GetStateMethodType>
+
+export default AppReduxStore

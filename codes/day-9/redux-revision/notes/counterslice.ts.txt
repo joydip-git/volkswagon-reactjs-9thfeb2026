@@ -1,0 +1,34 @@
+import { createSlice, type PayloadAction, type WritableDraft } from "@reduxjs/toolkit"
+
+type CounterStateType = {
+    counter: number
+}
+
+const initialCounterState: CounterStateType = {
+    counter: 0
+}
+
+//you will create 2 small reducer functions while using createSlice() method, which later combine them to produce a single reducer
+//each reducer will base "case-based reducer" which will be invoked as a response to an action type
+const counterSlice = createSlice({
+    name: 'counter',
+    initialState: initialCounterState,
+    reducers: {
+        increase: (state: WritableDraft<CounterStateType>, action: PayloadAction<number>) => {
+            state.counter = state.counter + action.payload
+        },
+        decrease: (state: WritableDraft<CounterStateType>, action: PayloadAction<number>) => {
+            state.counter = state.counter - action.payload
+        }
+    }
+})
+
+//get the 'whole' reducer
+export const counterReducer = counterSlice.reducer
+
+//the following action creators will be generated for you by the createSlice() method of the toolkit
+//you can get the object with all action creators using actions property of the slice object
+export const {
+    increase: increaseActionCreator,
+    decrease: decreaseActionCreator
+} = counterSlice.actions

@@ -1,0 +1,32 @@
+redux => an implementation of flux design pattern for an unidirectional data flow in any JS framework or library app
+famously used in React JS more freqeuently as an application-wide state management technique
+
+redux offers facility to create a shared state(s) as well as create a shared logic to update the shared state
+i.e., the state as well as the logic to update the state is "decoupled" from the component. hence both can be shared across multiple component throught application.
+
+store, state, reducer, dispatch, action
+
+packages: 
+	1. redux -> redux (legacy), @reduxjs/toolkit (latest)
+	2. with react -> react-redux
+
+@reduxjs/toolkit -> 
+	1. create a reducer (createReducer)
+	2. create action creators (createAction)
+	3. create a slice (createSlice)
+	4. create a reducer map by combining multiple reducers (combineReducers)
+	5. create a store (configureStore)
+	etc.
+
+react-redux
+	1. connect react app wit redux store -> Provider component
+	2. hooks
+		a. to select/subscribe a state -> useSelector
+		b. get dispatch method -> useDispatch
+
+additional middleware packages:
+	1. redux-logger -> logs the whole store [add as dev dependency]
+	[with TS based app also install @types/redux-logger package as dev dependency for the data types of redux logger packages for usage in TS]
+	
+
+
