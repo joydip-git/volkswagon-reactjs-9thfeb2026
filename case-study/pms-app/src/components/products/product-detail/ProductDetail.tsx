@@ -1,4 +1,5 @@
-import { Link, useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+//import { Link } from "react-router-dom";
 
 const ProductDetail = () => {
   const params = useParams()

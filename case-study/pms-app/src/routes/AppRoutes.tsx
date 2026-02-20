@@ -1,10 +1,20 @@
-import { Route, Routes, useRoutes, type RouteObject } from "react-router-dom"
-import ProductList from "../components/products/product-list/ProductList"
-import AddProduct from "../components/products/add-product/AddProduct"
-import ProductDetail from "../components/products/product-detail/ProductDetail"
-import UpdateProduct from "../components/products/update-product/UpdateProduct"
-import Home from "../components/common/home/Home"
-import PageNotFound from "../components/common/page-not-found/PageNotFound"
+import { lazy } from "react"
+import { useRoutes, type RouteObject } from "react-router-dom"
+//import {  Route, Routes} from "react-router-dom";
+// import ProductList from "../components/products/product-list/ProductList"
+// import AddProduct from "../components/products/add-product/AddProduct"
+// import ProductDetail from "../components/products/product-detail/ProductDetail"
+// import UpdateProduct from "../components/products/update-product/UpdateProduct"
+// import Home from "../components/common/home/Home"
+// import PageNotFound from "../components/common/page-not-found/PageNotFound"
+
+//lazy => Lets you defer loading a component’s code until it is rendered for the first time.
+const ProductList = lazy(() => import("../components/products/product-list/ProductList"))
+const ProductDetail = lazy(() => import("../components/products/product-detail/ProductDetail"))
+const AddProduct = lazy(() => import("../components/products/add-product/AddProduct"))
+const UpdateProduct = lazy(() => import("../components/products/update-product/UpdateProduct"))
+const Home = lazy(() => import("../components/common/home/Home"))
+const PageNotFound = lazy(() => import("../components/common/page-not-found/PageNotFound"))
 
 const AppRoutes = () => {
     // return (

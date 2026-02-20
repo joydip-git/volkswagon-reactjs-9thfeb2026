@@ -58,7 +58,11 @@ react forms:
 forms =>
 -------------
 
-
+performance:
+---------------------
+1. key attribute of child element in list of react elements
+2. lazy loading:
+	chunks => 
 
 
 

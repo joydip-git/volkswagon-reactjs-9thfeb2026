@@ -27,8 +27,8 @@ const ProductList = () => {
                 setProducts([])
                 setRequestOver(true)
             }
-        } catch (error: any) {
-            setErrorInfo(error.message)
+        } catch {
+            setErrorInfo('error occurred')
             setProducts([])
             setRequestOver(true)
         }
@@ -36,7 +36,8 @@ const ProductList = () => {
 
     useEffect(
         () => {
-            fetchProducts()
+            const fetch = async () => { fetchProducts() }
+            fetch()
         }, []
     )
 

@@ -17,6 +17,11 @@ link for JS:
 https://javascript.info/
 
 
+performance:
+----------------
+https://medium.com/@onix_react/react-optimization-techniques-e384b1ceb794
+
+
 babel documentation:
 ------------------------
 https://babeljs.io/docs
