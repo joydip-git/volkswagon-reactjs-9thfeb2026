@@ -50,9 +50,9 @@ const ProductList = () => {
     else
         design = (
             <div>
-                <h2>List of Products</h2>
+                <h2 className="text-muted">List of Products</h2>
                 <br />
-                <table>
+                <table className="table table-hover">
                     <thead>
                         <tr>
                             <th>Image</th>
@@ -62,7 +62,7 @@ const ProductList = () => {
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="table-dark">
                         {
                             products
                                 .map(

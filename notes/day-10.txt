@@ -1,0 +1,60 @@
+routing in React JS
+----------------------------
+default re-direction: 
+http://localhost:port-no 
+-> http://localhost:port-no/home 	-> Home
+
+navigating to home component explicitly
+http://localhost:port-no/home 	-> Home
+
+navigating to product list component explicitly
+http://localhost:port-no/products 		-> ProductList
+
+navigating to product detail component explicitly by clicking an image in any row of product list
+http://localhost:port-no/products/view/{id} 	-> ProductDetail
+
+navigating to edit product component explicitly by clicking an edit button in product detail component
+http://localhost:port-no/products/edit/{id} 	-> UpdateProduct
+
+navigating to add product component explicitly
+http://localhost:port-no/products/add	 		-> AddProduct
+
+
+any invalid route -> PageNotFound
+
+
+client-side routing:
+-----------------------------
+React JS talks about client-side routing: loading any component dynamically in the single HTML page of React JS application based on the change in route in the browser
+
+CSR -> client-side rendering
+SSR -> server side rendering
+
+Client-side data fetching 
+Server-side data fetching
+
+Static-site generation -> SSG
+
+routing through react router
+--------------------------------
+package: react-router-dom [react-router also will be installed]
+
+
+1. create routes
+	- declarative
+		Route component  -> to define each route
+		Routes Component -> to register all the individual routes
+	- programmatical
+
+2. register all the routes now with router engine
+component -> BrowserRouter: A declarative <Router> which uses the browser History API for client-side routing.
+
+pushState() -> History
+
+Link => A progressively enhanced <a href> wrapper to enable navigation with client-side routing without page/app reload. it disbales the feature page/app reloading.
+
+
+
+
+
+

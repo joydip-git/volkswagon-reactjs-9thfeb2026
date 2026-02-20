@@ -2,3 +2,7 @@
     width: 80px;
     margin: 2px
 }
+
+button{
+    border-radius: 5px;
+}
