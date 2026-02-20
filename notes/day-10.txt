@@ -53,6 +53,11 @@ pushState() -> History
 
 Link => A progressively enhanced <a href> wrapper to enable navigation with client-side routing without page/app reload. it disbales the feature page/app reloading.
 
+react forms:
+--------------------
+forms =>
+-------------
+
 
 
 
